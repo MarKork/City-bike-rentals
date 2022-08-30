@@ -37,7 +37,7 @@ const BikeRentals:React.FC = () =>{
     const getRentals = async() => {
         try{
             setIsLoading(true)
-            const response = await axios.get('http://localhost:3001/api/rentals')
+            const response = await axios.get('/api/rentals')
             setBikeRentals(response.data)
             setIsLoading(false)
         }catch (error){

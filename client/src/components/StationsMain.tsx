@@ -15,7 +15,7 @@ const StationsMain:React.FC = () =>{
     }, [])
 
     const getStationsCount = () => {
-        axios.get('http://localhost:3001/api/totalstations')
+        axios.get('/api/totalstations')
           .then(res=> {
             if(res.data["count"]===0){
                 setIsStationsDataFetched(false)

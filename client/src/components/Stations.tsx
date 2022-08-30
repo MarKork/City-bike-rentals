@@ -40,7 +40,7 @@ const Stations:React.FC = () =>{
     const getStations = async() => {
         try{
             setIsLoading(true)
-            const response = await axios.get('http://localhost:3001/api/stations')
+            const response = await axios.get('/api/stations')
             setStations(response.data)
             setIsLoading(false)
         }catch (error){
@@ -71,7 +71,7 @@ const Stations:React.FC = () =>{
         if(searchName){
             try{
                 setIsLoading(true)
-                const response = await axios.get('http://localhost:3001/api/station/name' +  `/${searchName}`)
+                const response = await axios.get('/api/station/name' +  `/${searchName}`)
                 console.log(response.data)
                 setIsSearch(true)
                 setFoundStation(response.data)

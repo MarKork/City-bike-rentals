@@ -15,7 +15,7 @@ const BikeRentalsMain:React.FC = () =>{
     }, [])
 
     const getRentalsCount = () => {
-        axios.get('http://localhost:3001/api/total')
+        axios.get('/api/total')
           .then(res=> {
             if(res.data["count"]===0){
                 setIsRentalsDataFetched(false)

@@ -27,7 +27,7 @@ const StationView:React.FC = () => {
     const getStationInfo = async() => {
         try{
             setIsLoading(true)
-            const response = await axios.get('http://localhost:3001/api/stations' +  `/${id}`)
+            const response = await axios.get('/api/stations' +  `/${id}`)
             setStation(response.data)
             setIsLoading(false)
         }catch (error){
@@ -39,7 +39,7 @@ const StationView:React.FC = () => {
         if(station){
             try{
                 setIsLoading(true)
-                const response = await axios.get('http://localhost:3001/api/rentals' +  `/${station.id}`)
+                const response = await axios.get('/api/rentals' +  `/${station.id}`)
                 setDepartureStations(response.data.length)
                 setIsLoading(false)
             }catch (error){
@@ -52,7 +52,7 @@ const StationView:React.FC = () => {
         if(station){
             try{
                 setIsLoading(true)
-                const response = await axios.get('http://localhost:3001/api/rentals/returns' +  `/${station.id}`)
+                const response = await axios.get('/api/rentals/returns' +  `/${station.id}`)
                 setReturnStations(response.data.length)
                 setIsLoading(false)
             }catch (error){
